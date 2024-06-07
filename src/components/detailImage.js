@@ -33,7 +33,7 @@ const DetailImage = () => {
         <div className=''>
             <Header />
 
-            <div className='flex px-10'>
+            <div className='flex px-10 overflow-hidden'>
                 <img className="w-1/2 rounded-lg" src={clickedPhoto?.urls.regular} />
 
                 <div className='right_text px-5'>
@@ -50,17 +50,19 @@ const DetailImage = () => {
 
                     <div className='mt-40'>
                         <h1 className='text-xl font-bold mb-2'>Tags</h1>
-                        {
-                            clickedPhoto?.tags.map((e) => {
-                                return (
-                                    e.type === 'search' ?
-                                        <span className='mr-2 cursor-pointer bg-black bg-opacity-40 px-2 py-1 rounded-md text-white hover:bg-opacity-80' onClick={tagClicked} >
-                                            {e.title}
-                                        </span>
-                                        : ''
-                                )
-                            })
-                        }
+                        <div className='flex flex-wrap'>
+                            {
+                                clickedPhoto?.tags.map((e) => {
+                                    return (
+                                        e.type === 'search' ?
+                                            <span className='mb-2 mr-2 cursor-pointer bg-black bg-opacity-40 px-2 py-1 rounded-md text-white hover:bg-opacity-80' onClick={tagClicked} >
+                                                {e.title}
+                                            </span>
+                                            : ''
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

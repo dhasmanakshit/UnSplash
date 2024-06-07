@@ -11,7 +11,6 @@ function Home() {
   return (
     <>
       <Header />
-
       <Photos data={allPhotos} />
     </>
   );
