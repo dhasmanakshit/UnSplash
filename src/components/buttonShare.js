@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ShareBtn = () => {
+const ButtonShare = () => {
     const [showShareMenu, setShowShareMenu] = useState(false)
 
     const shareBtnCliked = () => {
@@ -19,4 +19,4 @@ const ShareBtn = () => {
     )
 }
 
-export default ShareBtn
+export default ButtonShare

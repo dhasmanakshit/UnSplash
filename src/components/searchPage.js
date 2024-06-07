@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Photos from './photos';
 import { api_access_key, api_main } from '../utils/constants';
 import Header from './header';
+import LoadingGif from './loadingGif';
 
 const SearchPage = () => {
     const params = useParams();
@@ -13,7 +14,7 @@ const SearchPage = () => {
     const noOfColumns = useSelector((store) => store.settingSlice.noOfColumns)
 
     const FetchFromQuery = async () => {
-        // to refrfesh
+        // to refresh
         setSearchedPhotos([])
 
         var lol = []
@@ -34,13 +35,7 @@ const SearchPage = () => {
     return (
         <div className=''>
             <Header />
-            {
-                searchedPhotos
-                    ?
-                    <Photos data={searchedPhotos} />
-                    :
-                    <h1 className='mt-10 pr-32 text-center text-3xl font-thin '>No Photos found</h1>
-            }
+            <Photos data={searchedPhotos} />
         </div>
     )
 }

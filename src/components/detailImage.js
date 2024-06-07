@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { api_access_key, api_main } from '../utils/constants';
-import ShareBtn from './shareBtn';
 import Header from './header';
+import ButtonShare from './buttonShare';
 
 const DetailImage = () => {
     const [isLiked, setIsLiked] = useState(false)
@@ -45,7 +45,7 @@ const DetailImage = () => {
                         <button onClick={flipLiked}
                             className={isLiked === true ? 'bg-red-600 text-white border py-1 px-2 rounded-lg' : 'border py-1 px-2 rounded-lg '}
                         >Like</button>
-                        <ShareBtn />
+                        <ButtonShare />
                     </div>
 
                     <div className='mt-40'>
