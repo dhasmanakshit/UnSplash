@@ -50,7 +50,7 @@ const DetailImage = () => {
 
                     <div className='mt-40'>
                         <h1 className='text-xl font-bold mb-2'>Tags</h1>
-                        <div className='flex flex-wrap'>
+                        <div className='flex flex-wrap '>
                             {
                                 clickedPhoto?.tags.map((e) => {
                                     return (
