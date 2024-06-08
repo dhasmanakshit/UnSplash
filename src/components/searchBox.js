@@ -1,13 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { setSearchedPhotos } from '../utils/photosSlice'
 
 const SearchBox = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     function searchQuery(e) {
         // if the key pressed is ENTER key
         if (e.keyCode === 13)
-            if (e.target.value.trim() !== '')
+            if (e.target.value.trim() !== '') {
+                console.log('reseting searches')
+                // dispatch(setSearchedPhotos([]))
                 navigate('/search/' + e.target.value)
+            }
     }
     return (
         <div>

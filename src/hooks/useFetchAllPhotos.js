@@ -14,12 +14,12 @@ const useFetchAllPhotos = () => {
         for (var i = 0; i < noOfColumns; i++) {
             const res = await fetch(api_main + "/photos?" + api_access_key + "&page=" + (i + 1));
             const json = await res.json()
-            // console.log(json)
+            // console.log(typeof (json), json)
             lol[i] = (json)
         }
 
         dispatch(setAllPhotos(lol))
-        console.log(lol)
+        // console.log(lol)
     }
     useEffect(() => {
         fetchAllPhotos();
