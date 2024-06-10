@@ -1,15 +1,8 @@
 import React from 'react'
 import PhotoCard from './photoCard'
-import LoadingGif from './loadingGif'
 
 const Photos = ({ data }) => {
-
-
     return (
-
-        // data?.length === 0
-        //     ? <LoadingGif />
-        //     : 
         data[0]?.length === 0
             ? <h1 className='mt-10 text-2xl font-thin text-center'>No image match</h1>
             : <div className='flex gap-6 px-10'>
